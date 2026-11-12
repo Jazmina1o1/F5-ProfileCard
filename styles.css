@@ -1,0 +1,243 @@
+
+body.flip-demo {
+  --ink: #49333f;
+  --accent: #9b5574;
+  --pink: #f8e6ee;
+  --paper: #fff8f5;
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 16px;
+  place-items: center;
+  box-sizing: border-box;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--pink);
+}
+
+.flip-card {
+  width: min(320px, calc(100vw - 32px));
+  height: 490px;
+  perspective: 1200px;
+  filter: drop-shadow(0 22px 30px rgba(74, 45, 63, 0.18));
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.2, 0.75, 0.25, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card .card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 24px;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--pink);
+  border-radius: 24px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+  align-items: center;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 142px;
+  height: 142px;
+  margin: 8px 0 16px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(74, 45, 63, 0.16);
+}
+
+.profile-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.profile-content h1,
+.profile-content h2,
+.profile-content p {
+  margin: 0;
+}
+
+.profile-content h1 {
+  font-size: clamp(2rem, 8vw, 2.5rem);
+  line-height: 1;
+}
+
+.profile-content h5 {
+  margin: 0;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.profile-content p {
+  max-width: 230px;
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.profile-content .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.profile-content .icons a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: #fff;
+  border: 1px solid rgba(145, 70, 108, 0.14);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.profile-content .icons a:hover {
+  transform: translateY(-3px);
+  background: var(--rose);
+}
+
+.profile-content .icons i {
+  font-size: 0.95rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+  background: var(--pink);
+}
+
+.back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.back-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.back-content h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.pasta-photos {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 2px 0;
+}
+
+.pasta-photos img {
+  width: 100%;
+  height: 118px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(74, 45, 63, 0.12);
+  transform: rotate(-2deg);
+}
+
+.pasta-photos img + img {
+  transform: rotate(2deg);
+}
+
+.back-description {
+  max-width: 235px;
+  margin: 0;
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.email-contact {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2px;
+  padding: 0 16px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.email-contact:hover {
+  transform: translateY(-2px);
+  background: var(--ink);
+}
+
+.flip-hint {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  margin: 0;
+  color: #967e8d;
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner,
+  .profile-content .icons a,
+  .email-contact {
+    transition: none;
+  }
+}

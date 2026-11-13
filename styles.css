@@ -1,4 +1,4 @@
-
+/*color picks*/
 body.flip-demo {
   --ink: #49333f;
   --accent: #9b5574;
@@ -15,6 +15,7 @@ body.flip-demo {
   background: var(--pink);
 }
 
+/*flip or fade in idk.. just keep them there yah*/
 .flip-card {
   width: min(320px, calc(100vw - 32px));
   height: 490px;
@@ -22,7 +23,6 @@ body.flip-demo {
   filter: drop-shadow(0 22px 30px rgba(196, 42, 137, 0.18));
   animation: card-fade-in 0.8s ease-out both;
 }
-
 @keyframes card-fade-in {
   from {
     opacity: 0;
@@ -193,7 +193,7 @@ body.flip-demo {
   gap: 10px;
   margin: 2px 0;
 }
-
+/**phtotos wow*/ 
 .pasta-photos img {
   width: 100%;
   height: 118px;
@@ -248,7 +248,7 @@ body.flip-demo {
   .email-contact {
     transition: none;
   }
-
+/*okay yeah no flip maybe (in case i change my mind one day)*/
   .flip-card-back {
     animation: none;
   }

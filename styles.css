@@ -240,20 +240,6 @@ body.flip-demo {
   background: var(--ink);
 }
 
-.flip-hint {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  left: 16px;
-  margin: 0;
-  color: #967e8d;
-  font-family: Arial, sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .flip-card,
   .flip-card-inner,

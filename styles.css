@@ -1,6 +1,6 @@
 /*color picks*/
 body.flip-demo {
-  --ink: #49333f;
+  --ink: #6b5375;
   --accent: #9b5574;
   --pink: #f8e6ee;
   --paper: #fff8f5;
@@ -252,4 +252,11 @@ body.flip-demo {
   .flip-card-back {
     animation: none;
   }
+}
+h8 {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-decoration: underline;
 }
